@@ -1,12 +1,32 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tela Login com Modal de Cadastros de Produtos
 
-Currently, two official plugins are available:
+Esse é um projeto intitulado Digital Money, é uma aplicação web em desenvolvimento para controle financeiro pessoal, onde o usuário pode registrar entradas e saídas de dinheiro, além de visualizar o saldo total.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Funcionalidades atuais
 
-## Expanding the ESLint configuration
+- ✅ Interface criada com **React**
+- ✅ Estilização de componentes em conclusão
+- ✅ Modal funcional para adicionar nova transação
+- ❌ Sem lógica de JavaScript implementada ainda (sem armazenamento ou manipulação de dados)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tecnologias usadas
+React
+Vite
+HTML & CSS 
+TailwindCSS
+Sem integração com backend ou lógica de JavaScript até o momento
+
+## 🚀 Como rodar o projeto localmente
+ 1 - Abra o VS Code com o Node.js instalado
+ 2 - Execute os comandos abaixo no terminal:
+        npm install
+        npm run dev
+3- Abra o navegador e acesse o link gerado (geralmente http://localhost:5173)
+
+
+## 🌐 Link publicado
+Você também pode acessar pelo link abaixo:
+👉 https://tela-login-com-modal-cadastro.vercel.app/
+
