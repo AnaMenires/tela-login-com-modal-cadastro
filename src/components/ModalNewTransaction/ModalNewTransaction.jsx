@@ -4,6 +4,7 @@ import TitleModal from "../TitleModal/TitleModal";
 import InputValue from "../InputValue/InputValue";
 import InputClick from "../InputClick/InputClick";
 import { ArrowCircleDown, ArrowCircleUp } from "@phosphor-icons/react";
+import ButtonModal from "../ButtonModal/ButtonModal";
 
 export default function ModalNewTransaction() {
   const [open, setOpen] = useState(true);
@@ -21,7 +22,10 @@ export default function ModalNewTransaction() {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
             <div className="bg-white px-3 pt-4 pb-4 sm:p-6 sm:pb-4 gap-2">
-              <TitleModal />
+              <TitleModal 
+              label="Cadastrar Transação"
+              
+              />
 
               <InputValue
                 type="text"
@@ -59,12 +63,12 @@ export default function ModalNewTransaction() {
             </div>
 
             <div className="px-4 py-3">
-              <button
-                type="button"
-                className="w-full rounded-md bg-green-600 px-6 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500">
-                Cadastrar
-              </button>
+             <ButtonModal
+              label="Cadastrar"
+             />
             </div>
+
+
           </DialogPanel>
         </div>
       </div>
