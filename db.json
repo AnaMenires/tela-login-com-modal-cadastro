@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "title": "Netflix",
+      "price": 55.9,
+      "type": "withdraw",
+      "category": "Entretenimento",
+      "date": "17/05/2025"
+    },
+    {
+      "id": "d3c8",
+      "title": "Prime",
+      "price": 20,
+      "category": "Entretenimento",
+      "transactionType": "deposit",
+      "date": "17/05/2025"
+    }
+  ]
+}

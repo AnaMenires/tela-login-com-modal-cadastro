@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputValue = ({ text, id, nome, placeholder}) => {
+const InputValue = ({ text, id, nome, placeholder, onChange}) => {
 
   return (
     <div>
@@ -9,6 +9,7 @@ const InputValue = ({ text, id, nome, placeholder}) => {
       id={id}
       name={nome} 
       placeholder={placeholder}
+      onChange={onChange}
       className=' flex justify-center my-4 w-[100%] bg-gray-200 border border-gray-300 p-2 rounded-xs'/>
     </div>
   )

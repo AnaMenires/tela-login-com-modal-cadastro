@@ -1,13 +1,47 @@
-import { useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import TitleModal from "../TitleModal/TitleModal";
 import InputValue from "../InputValue/InputValue";
 import InputClick from "../InputClick/InputClick";
 import { ArrowCircleDown, ArrowCircleUp } from "@phosphor-icons/react";
 import ButtonModal from "../ButtonModal/ButtonModal";
+import { useState } from "react";
+import axios from "axios";
 
-export default function ModalNewTransaction() {
-  const [open, setOpen] = useState(true);
+export default function ModalNewTransaction( {open, setOpen, } ) {
+  const [title, setTitle] =useState("");
+  const [price, SetPrice] =useState(0);
+  const [category, setCategory] =useState("");
+  const [transactionType, setTransactionType] = useState("deposit")
+
+  
+
+  function handleChangeTitle(ev) {
+    setTitle(ev);
+  }
+
+  function handleChangePrice(ev) {
+    SetPrice(ev);
+  }
+
+  function handleChangeCategory(ev) {
+    setCategory(ev);
+  }
+
+  function handleClickTransactionType (type) {
+    setTransactionType(type);
+  }
+  
+  async function handleNewTransaction () {
+    await axios.post("http://localhost:3000/transactions", {
+      title,
+      price,
+      category,
+      transactionType,
+      date: "17/05/2025"
+    } );
+
+    setOpen(false)
+  }
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -29,16 +63,18 @@ export default function ModalNewTransaction() {
 
               <InputValue
                 type="text"
-                id="titulo"
+                id="01"
                 nome="Título"
                 placeholder="Título Cadastro"
+                onChange={(ev) => handleChangeTitle(ev.target.value)}
               />
 
               <InputValue
                 type="number"
-                id="titulo"
-                nome="Título"
+                id="02"
+                nome="Preço"
                 placeholder="Preço"
+                onChange={(ev) => handleChangePrice(ev.target.value)}
               />
 
               <div className="flex gap-4">
@@ -46,25 +82,30 @@ export default function ModalNewTransaction() {
                   label="Entrada"
                   Icon={ArrowCircleUp}
                   iconColor="text-green-600"
+                  onClick={() => handleClickTransactionType("deposit")}
                 />
                 <InputClick
                   label="Saida"
                   Icon={ArrowCircleDown}
                   iconColor="text-red-600"
+                  onClick={() => handleClickTransactionType("withdraw")}
                 />
               </div>
 
               <InputValue
                 type="text"
-                id="titulo"
-                nome="Título"
+                id="03"
+                nome="Categoria"
                 placeholder="Categoria"
+                onChange={(ev) => handleChangeCategory(ev.target.value)}
               />
             </div>
 
             <div className="px-4 py-3">
              <ButtonModal
               label="Cadastrar"
+              onClick={handleNewTransaction}
+
              />
             </div>
 
